@@ -1,6 +1,9 @@
 package edu.javacourse.student;
 
+import org.w3c.dom.stylesheets.LinkStyle;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Table(name ="sr_university")
 @Entity
@@ -12,7 +15,30 @@ public class University {
     private Long universityId;
     @Column(name = "university_name")
     private String universityName;
-    @Column(name = "")
+    @OneToMany(cascade = {CascadeType.PERSIST}, fetch = FetchType.LAZY,mappedBy = "university")
+    private List<Faculty> faculties;
 
+    public Long getUniversityId() {
+        return universityId;
+    }
 
+    public void setUniversityId(Long universityId) {
+        this.universityId = universityId;
+    }
+
+    public String getUniversityName() {
+        return universityName;
+    }
+
+    public void setUniversityName(String universityName) {
+        this.universityName = universityName;
+    }
+
+    public List<Faculty> getFaculties() {
+        return faculties;
+    }
+
+    public void setFaculties(List<Faculty> faculties) {
+        this.faculties = faculties;
+    }
 }

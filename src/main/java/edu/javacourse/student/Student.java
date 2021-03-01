@@ -4,6 +4,7 @@ import org.hibernate.service.spi.InjectService;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Table(name = "sr_student")
 @Entity
@@ -26,7 +27,78 @@ public class Student {
     private String passportNumber;
     @Column(name = "passport_date")
     private LocalDate passportDate;
+    @OneToMany(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY, mappedBy = "student")
+    private List<StudentDocument> documents;
 
+    public Long getStudentId() {
+        return studentId;
+    }
 
+    public void setStudentId(Long studentId) {
+        this.studentId = studentId;
+    }
 
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public LocalDate getPassportSeria() {
+        return passportSeria;
+    }
+
+    public void setPassportSeria(LocalDate passportSeria) {
+        this.passportSeria = passportSeria;
+    }
+
+    public String getPassportNumber() {
+        return passportNumber;
+    }
+
+    public void setPassportNumber(String passportNumber) {
+        this.passportNumber = passportNumber;
+    }
+
+    public LocalDate getPassportDate() {
+        return passportDate;
+    }
+
+    public void setPassportDate(LocalDate passportDate) {
+        this.passportDate = passportDate;
+    }
+
+    public List<StudentDocument> getDocuments() {
+        return documents;
+    }
+
+    public void setDocuments(List<StudentDocument> documents) {
+        this.documents = documents;
+    }
 }
