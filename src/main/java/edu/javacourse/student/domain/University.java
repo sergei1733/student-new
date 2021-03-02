@@ -1,6 +1,6 @@
-package edu.javacourse.student;
+package edu.javacourse.student.domain;
 
-import org.w3c.dom.stylesheets.LinkStyle;
+import edu.javacourse.student.domain.Faculty;
 
 import javax.persistence.*;
 import java.util.List;

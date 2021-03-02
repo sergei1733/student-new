@@ -1,6 +1,4 @@
-package edu.javacourse.student;
-
-import org.hibernate.service.spi.InjectService;
+package edu.javacourse.student.domain;
 
 import javax.persistence.*;
 import java.time.LocalDate;
