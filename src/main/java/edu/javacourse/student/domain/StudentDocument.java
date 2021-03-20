@@ -17,10 +17,10 @@ public class StudentDocument {
     private LocalDate documentDate;
     @Column(name = "expired_date")
     private LocalDate expiredDate;
-    @ManyToOne(cascade = {CascadeType.PERSIST}, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY)
     @JoinColumn(name = "student_id")
     private Student student;
-    @ManyToOne(cascade = {CascadeType.REFRESH},fetch = FetchType.LAZY)
+    @ManyToOne(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY)
     @JoinColumn(name = "faculty_id")
     private Faculty faculty;
     @Column(name = "student_form")

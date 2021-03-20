@@ -20,7 +20,7 @@ public class Student {
     @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
     @Column(name = "passport_seria")
-    private LocalDate passportSeria;
+    private String passportSeria;
     @Column(name = "passport_number")
     private String passportNumber;
     @Column(name = "passport_date")
@@ -68,11 +68,11 @@ public class Student {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public LocalDate getPassportSeria() {
+    public String getPassportSeria() {
         return passportSeria;
     }
 
-    public void setPassportSeria(LocalDate passportSeria) {
+    public void setPassportSeria(String passportSeria) {
         this.passportSeria = passportSeria;
     }
 

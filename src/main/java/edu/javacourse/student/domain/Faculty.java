@@ -10,7 +10,7 @@ public class Faculty {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "faculty_id")
     private Long facultyId;
-    @ManyToOne(cascade = {CascadeType.PERSIST}, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY)
     @JoinColumn(name = "university_id")
     private University university;
     @Column(name = "faculty_name")
