@@ -6,23 +6,15 @@ import java.time.LocalDate;
 
 public class StudentRequest {
 
-    private String firstName;
     private String lastName;
-    private String moddleName;
+    private String firstName;
+    private String middleName;
     @XmlJavaTypeAdapter(value = LocalDateAdapter.class)
     private LocalDate dateOfBirth;
     private String passportSeria;
     private String passportNumber;
     @XmlJavaTypeAdapter(value = LocalDateAdapter.class)
     private LocalDate passportDate;
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
 
     public String getLastName() {
         return lastName;
@@ -32,12 +24,20 @@ public class StudentRequest {
         this.lastName = lastName;
     }
 
-    public String getModdleName() {
-        return moddleName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setModdleName(String moddleName) {
-        this.moddleName = moddleName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
     }
 
     public LocalDate getDateOfBirth() {
