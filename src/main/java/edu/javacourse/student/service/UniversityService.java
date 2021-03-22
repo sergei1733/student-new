@@ -1,4 +1,4 @@
-package edu.javacourse.student.servlet;
+package edu.javacourse.student.service;
 
 import edu.javacourse.student.dao.UniversityRepository;
 import edu.javacourse.student.domain.University;
