@@ -32,6 +32,13 @@ public class UniversityServiceTest {
         list.forEach(u -> System.out.println(
                 u.getUniversityId()+ ":" + u.getUniversityName() + ":"+ u.getFaculties().size()));
     }
+
+    @Test
+    public void getUniversity(){
+        University u = service.getUniversity(1L);
+        System.out.println(u.getUniversityName()+":"+u.getFaculties().size());
+    }
+
     @Test
     public void findFaculty() {
         List<Faculty> list = service.findFaculties();

@@ -37,7 +37,12 @@ public class UniversityService {
     }
 
     @Transactional(readOnly = true)
-    public University getUniver
+    public University getUniversity(Long universityId){
+        University u = universityRepository.findById(universityId).get();
+        Hibernate.initialize(u.getFaculties());
+        return u;
+    }
+
     @Transactional(readOnly = true)
     public Faculty getFaculty (Long facultyId){
         Optional<Faculty> fop = facultyRepository.findById(facultyId);
