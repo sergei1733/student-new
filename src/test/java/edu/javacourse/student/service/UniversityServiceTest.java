@@ -1,5 +1,6 @@
 package edu.javacourse.student.service;
 
+import edu.javacourse.student.domain.Faculty;
 import edu.javacourse.student.domain.University;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,5 +24,11 @@ public class UniversityServiceTest {
         System.out.println("OK");
         list.forEach(u -> System.out.println(
                 u.getUniversityId()+ ":" + u.getUniversityName() + ":"+ u.getFaculties().size()));
+    }
+    @Test
+    public void findFaculty() {
+        List<Faculty> list = service.findFaculties();
+        System.out.println("OK");
+        list.forEach(f -> System.out.println(f.getUniversity().getUniversityName()));
     }
 }
