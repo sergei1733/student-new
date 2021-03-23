@@ -50,5 +50,14 @@
         <property name="entityManagerFactory" ref="emf" />
     </bean>
 
+<!--    <mvc:annotation-driven/>-->
 
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+<!--    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">-->
+<!--        <property name="maxUploadSize" value="200000"/>-->
+<!--    </bean>-->
 </beans>
