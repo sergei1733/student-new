@@ -26,4 +26,10 @@ public class StudentController {
         return "Rest service is working";
     }
 
+    @GetMapping(path = "/papams/{checkId}")
+    public String checkParams(@PathVariable("checkId") Long checkId,
+                              @RequestParam("comment") String comment){
+        return checkId + ":" + comment;
+    }
+
 }
